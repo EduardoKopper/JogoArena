@@ -38,7 +38,7 @@ class Arena {
 
 class Program {
   public static void Main (string[] args) {
-    Personagem capitaoMarvel = new Personagem {
+    Personagem capitaMarvel = new Personagem {
       Nome = "Capitã Marvel",
       Idade = 23,
       Vida = 1000,
@@ -51,10 +51,17 @@ class Program {
     };
     Personagem batman = new Personagem("Batman", 42, 80, "vilao");
 
-    (batman, capitaoMarvel) = Arena.Dano(batman, capitaoMarvel);
+    (batman, capitaMarvel) = Arena.Dano(batman, capitaMarvel);
+    (flash, batman) = Arena.Dano(flash, batman);
+    (capitaMarvel, flash) = Arena.Dano(capitaMarvel, flash);
+    (batman, capitaMarvel) = Arena.Dano(batman, capitaMarvel);
+    (batman, flash) = Arena.Dano(batman, flash);
+    (capitaMarvel, batman) = Arena.Dano(capitaMarvel, batman);
+    (capitaMarvel, flash) = Arena.Dano(capitaMarvel, flash);
     (flash, batman) = Arena.Dano(flash, batman);
     (batman, flash) = Arena.Dano(batman, flash);
-    Console.WriteLine("Capitã Marvel: " + capitaoMarvel.Vida);
+    
+    Console.WriteLine("Capitã Marvel: " + capitaMarvel.Vida);
     Console.WriteLine("Flash: " + flash.Vida);
     Console.WriteLine("Batman: " + batman.Vida);
   }
